@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Agroforestry Systems - Option A (Custom)</title>
+    <id>http://styles.mendeley.com/agroforestry-systems-option-a</id>
+    <link href="http://www.zotero.org/styles/agroforestry-systems-option-a" rel="self"/>
+    <author>
+      <name>Custom CSL Generator</name>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2025-12-10T00:00:00+00:00</updated>
+    <link href="http://styles.mendeley.com/agroforestry-systems-option-a" rel="documentation"/>
+  </info>
+
+  <!-- Locale -->
+  <locale xml:lang="en">
+    <terms>
+      <term name="page">page</term>
+    </terms>
+  </locale>
+
+  <!-- Citation (in-text) -->
+  <citation>
+    <layout suffix=".">
+      <text macro="author"/>
+      <text variable="issued" prefix=" (" suffix=")"/>
+    </layout>
+  </citation>
+
+  <!-- Bibliography -->
+  <bibliography hanging-indent="true" line-spacing="1">
+    <layout>
+      <!-- Authors: Surname + initials (no periods), list ALL authors -->
+      <text macro="author" suffix=" "/>
+      <!-- Year in parentheses -->
+      <text variable="issued" prefix="(" suffix=")"/>
+      <text variable="title" prefix=" " suffix=". "/>
+      <!-- Journal --> (use whatever is in the Source field; user may input abbreviated name) -->
+      <text variable="container-title" prefix=" " suffix=" "/>
+      <!-- Volume:Pages -->
+      <text variable="volume" prefix=""/>
+      <text variable="page" prefix=":" suffix=". "/>
+      <!-- DOI as full https://doi.org/... -->
+      <group>
+        <text variable="DOI" prefix="https://doi.org/" suffix=". "/>
+      </group>
+      <!-- URL when DOI is absent or as additional -->
+      <group>
+        <text variable="URL" prefix="" suffix=""/>
+      </group>
+    </layout>
+  </bibliography>
+
+  <!-- Macros -->
+  <macro name="author">
+    <!-- Force listing all authors by setting et-al thresholds high -->
+    <names variable="author" et-al-min="100" et-al-subsequent-min="100">
+      <!-- Use family then given-initials without punctuation -->
+      <name form="long" delimiter=", ">
+        <name-part name="family"/>
+        <text value=", "/>
+        <name-part name="given" initialize-with=""/>
+      </name>
+    </names>
+  </macro>
+
+</style>
